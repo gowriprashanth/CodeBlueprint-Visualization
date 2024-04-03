@@ -1,0 +1,4 @@
+CSS to reverse the slider
+#commitNumberSlider {
+    direction: rtl
+  }

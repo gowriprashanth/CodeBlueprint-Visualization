@@ -14,10 +14,15 @@ export const UpdateVisualization = debounce(function(commitNumber) {
 }, 500); // Adjust the delay as needed
 
 // Initial visualization update with default input value
-UpdateVisualization(1);
+UpdateVisualization(6270);
 
-// Add event listener for input box value change
-document.getElementById("updateButton").addEventListener("click", function() {
-    const commitNumber = +document.getElementById("commitNumberInput").value;
+// Add event listener for slider input change
+document.getElementById("commitNumberSlider").addEventListener("input", function() {
+    const sliderMax = 6270; // Maximum value of the slider
+    const sliderValue = +document.getElementById("commitNumberSlider").value;
+    
+    // Calculate the corresponding commit number
+    const commitNumber = sliderMax - sliderValue + 1;
+    
     UpdateVisualization(commitNumber);
 });
