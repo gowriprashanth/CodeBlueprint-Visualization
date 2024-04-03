@@ -1,0 +1,1705 @@
+{
+  "lines_of_code": 11079,
+  "num_classes": 86,
+  "num_methods": 492,
+  "num_variables": 11,
+  "children": [
+    {
+      "name": "TestCommand",
+      "children": []
+    },
+    {
+      "name": "TestSuperLen",
+      "children": [
+        {
+          "name": "test_io_streams",
+          "type": "method"
+        },
+        {
+          "name": "test_super_len_correctly_calculates_len_of_partially_read_file",
+          "type": "method"
+        },
+        {
+          "name": "test_super_len_handles_files_raising_weird_errors_in_tell",
+          "type": "method"
+        },
+        {
+          "name": "test_super_len_tell_ioerror",
+          "type": "method"
+        },
+        {
+          "name": "test_string",
+          "type": "method"
+        },
+        {
+          "name": "test_file",
+          "type": "method"
+        },
+        {
+          "name": "test_tarfile_member",
+          "type": "method"
+        },
+        {
+          "name": "test_super_len_with__len__",
+          "type": "method"
+        },
+        {
+          "name": "test_super_len_with_no__len__",
+          "type": "method"
+        },
+        {
+          "name": "test_super_len_with_tell",
+          "type": "method"
+        },
+        {
+          "name": "test_super_len_with_fileno",
+          "type": "method"
+        },
+        {
+          "name": "test_super_len_with_no_matches",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestToKeyValList",
+      "children": [
+        {
+          "name": "test_valid",
+          "type": "method"
+        },
+        {
+          "name": "test_invalid",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestUnquoteHeaderValue",
+      "children": [
+        {
+          "name": "test_valid",
+          "type": "method"
+        },
+        {
+          "name": "test_is_filename",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestGetEnvironProxies",
+      "children": [
+        {
+          "name": "no_proxy",
+          "type": "method"
+        },
+        {
+          "name": "test_bypass",
+          "type": "method"
+        },
+        {
+          "name": "test_not_bypass",
+          "type": "method"
+        },
+        {
+          "name": "test_bypass_no_proxy_keyword",
+          "type": "method"
+        },
+        {
+          "name": "test_not_bypass_no_proxy_keyword",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestIsIPv4Address",
+      "children": [
+        {
+          "name": "test_valid",
+          "type": "method"
+        },
+        {
+          "name": "test_invalid",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestIsValidCIDR",
+      "children": [
+        {
+          "name": "test_valid",
+          "type": "method"
+        },
+        {
+          "name": "test_invalid",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestAddressInNetwork",
+      "children": [
+        {
+          "name": "test_valid",
+          "type": "method"
+        },
+        {
+          "name": "test_invalid",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestGuessFilename",
+      "children": [
+        {
+          "name": "test_guess_filename_invalid",
+          "type": "method"
+        },
+        {
+          "name": "test_guess_filename_valid",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestExtractZippedPaths",
+      "children": [
+        {
+          "name": "test_unzipped_paths_unchanged",
+          "type": "method"
+        },
+        {
+          "name": "test_zipped_paths_extracted",
+          "type": "method"
+        },
+        {
+          "name": "test_invalid_unc_path",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestContentEncodingDetection",
+      "children": [
+        {
+          "name": "test_none",
+          "type": "method"
+        },
+        {
+          "name": "test_pragmas",
+          "type": "method"
+        },
+        {
+          "name": "test_precedence",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestGuessJSONUTF",
+      "children": [
+        {
+          "name": "test_encoded",
+          "type": "method"
+        },
+        {
+          "name": "test_bad_utf_like_encoding",
+          "type": "method"
+        },
+        {
+          "name": "test_guess_by_bom",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "RegHandle",
+      "children": [
+        {
+          "name": "Close",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "BoomFile",
+      "children": [
+        {
+          "name": "__len__",
+          "type": "method"
+        },
+        {
+          "name": "tell",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "NoLenBoomFile",
+      "children": [
+        {
+          "name": "tell",
+          "type": "method"
+        },
+        {
+          "name": "seek",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "LenFile",
+      "children": [
+        {
+          "name": "__init__",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestCaseInsensitiveDict",
+      "children": [
+        {
+          "name": "test_init",
+          "type": "method"
+        },
+        {
+          "name": "test_docstring_example",
+          "type": "method"
+        },
+        {
+          "name": "test_len",
+          "type": "method"
+        },
+        {
+          "name": "test_getitem",
+          "type": "method"
+        },
+        {
+          "name": "test_fixes_649",
+          "type": "method"
+        },
+        {
+          "name": "test_delitem",
+          "type": "method"
+        },
+        {
+          "name": "test_contains",
+          "type": "method"
+        },
+        {
+          "name": "test_get",
+          "type": "method"
+        },
+        {
+          "name": "test_update",
+          "type": "method"
+        },
+        {
+          "name": "test_update_retains_unchanged",
+          "type": "method"
+        },
+        {
+          "name": "test_iter",
+          "type": "method"
+        },
+        {
+          "name": "test_equality",
+          "type": "method"
+        },
+        {
+          "name": "test_setdefault",
+          "type": "method"
+        },
+        {
+          "name": "test_lower_items",
+          "type": "method"
+        },
+        {
+          "name": "test_preserve_key_case",
+          "type": "method"
+        },
+        {
+          "name": "test_preserve_last_key_case",
+          "type": "method"
+        },
+        {
+          "name": "test_copy",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestLookupDict",
+      "children": [
+        {
+          "name": "setup",
+          "type": "method"
+        },
+        {
+          "name": "test_repr",
+          "type": "method"
+        },
+        {
+          "name": "test_getitem",
+          "type": "method"
+        },
+        {
+          "name": "test_get",
+          "type": "method"
+        },
+        {
+          "name": "get_item_parameters",
+          "type": "attribute"
+        }
+      ]
+    },
+    {
+      "name": "TestTestServer",
+      "children": [
+        {
+          "name": "test_basic",
+          "type": "method"
+        },
+        {
+          "name": "test_server_closes",
+          "type": "method"
+        },
+        {
+          "name": "test_text_response",
+          "type": "method"
+        },
+        {
+          "name": "test_basic_response",
+          "type": "method"
+        },
+        {
+          "name": "test_basic_waiting_server",
+          "type": "method"
+        },
+        {
+          "name": "test_multiple_requests",
+          "type": "method"
+        },
+        {
+          "name": "test_request_recovery",
+          "type": "method"
+        },
+        {
+          "name": "test_requests_after_timeout_are_not_received",
+          "type": "method"
+        },
+        {
+          "name": "test_request_recovery_with_bigger_timeout",
+          "type": "method"
+        },
+        {
+          "name": "test_server_finishes_on_error",
+          "type": "method"
+        },
+        {
+          "name": "test_server_finishes_when_no_connections",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestRequests",
+      "children": [
+        {
+          "name": "test_entry_points",
+          "type": "method"
+        },
+        {
+          "name": "test_invalid_url",
+          "type": "method"
+        },
+        {
+          "name": "test_basic_building",
+          "type": "method"
+        },
+        {
+          "name": "test_no_content_length",
+          "type": "method"
+        },
+        {
+          "name": "test_no_body_content_length",
+          "type": "method"
+        },
+        {
+          "name": "test_empty_content_length",
+          "type": "method"
+        },
+        {
+          "name": "test_override_content_length",
+          "type": "method"
+        },
+        {
+          "name": "test_path_is_not_double_encoded",
+          "type": "method"
+        },
+        {
+          "name": "test_params_are_added_before_fragment",
+          "type": "method"
+        },
+        {
+          "name": "test_params_original_order_is_preserved_by_default",
+          "type": "method"
+        },
+        {
+          "name": "test_params_bytes_are_encoded",
+          "type": "method"
+        },
+        {
+          "name": "test_binary_put",
+          "type": "method"
+        },
+        {
+          "name": "test_whitespaces_are_removed_from_url",
+          "type": "method"
+        },
+        {
+          "name": "test_mixed_case_scheme_acceptable",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_200_OK_GET_ALTERNATIVE",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_302_ALLOW_REDIRECT_GET",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_307_ALLOW_REDIRECT_POST",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_307_ALLOW_REDIRECT_POST_WITH_SEEKABLE",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_302_TOO_MANY_REDIRECTS",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_302_TOO_MANY_REDIRECTS_WITH_PARAMS",
+          "type": "method"
+        },
+        {
+          "name": "test_http_301_changes_post_to_get",
+          "type": "method"
+        },
+        {
+          "name": "test_http_301_doesnt_change_head_to_get",
+          "type": "method"
+        },
+        {
+          "name": "test_http_302_changes_post_to_get",
+          "type": "method"
+        },
+        {
+          "name": "test_http_302_doesnt_change_head_to_get",
+          "type": "method"
+        },
+        {
+          "name": "test_http_303_changes_post_to_get",
+          "type": "method"
+        },
+        {
+          "name": "test_http_303_doesnt_change_head_to_get",
+          "type": "method"
+        },
+        {
+          "name": "test_header_and_body_removal_on_redirect",
+          "type": "method"
+        },
+        {
+          "name": "test_transfer_enc_removal_on_redirect",
+          "type": "method"
+        },
+        {
+          "name": "test_fragment_maintained_on_redirect",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_200_OK_GET_WITH_PARAMS",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_200_OK_GET_WITH_MIXED_PARAMS",
+          "type": "method"
+        },
+        {
+          "name": "test_set_cookie_on_301",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_sent_on_redirect",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_removed_on_expire",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_quote_wrapped",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_persists_via_api",
+          "type": "method"
+        },
+        {
+          "name": "test_request_cookie_overrides_session_cookie",
+          "type": "method"
+        },
+        {
+          "name": "test_request_cookies_not_persisted",
+          "type": "method"
+        },
+        {
+          "name": "test_generic_cookiejar_works",
+          "type": "method"
+        },
+        {
+          "name": "test_param_cookiejar_works",
+          "type": "method"
+        },
+        {
+          "name": "test_cookielib_cookiejar_on_redirect",
+          "type": "method"
+        },
+        {
+          "name": "test_requests_in_history_are_not_overridden",
+          "type": "method"
+        },
+        {
+          "name": "test_history_is_always_a_list",
+          "type": "method"
+        },
+        {
+          "name": "test_headers_on_session_with_None_are_not_sent",
+          "type": "method"
+        },
+        {
+          "name": "test_headers_preserve_order",
+          "type": "method"
+        },
+        {
+          "name": "test_user_agent_transfers",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_200_OK_HEAD",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_200_OK_PUT",
+          "type": "method"
+        },
+        {
+          "name": "test_BASICAUTH_TUPLE_HTTP_200_OK_GET",
+          "type": "method"
+        },
+        {
+          "name": "test_set_basicauth",
+          "type": "method"
+        },
+        {
+          "name": "test_basicauth_encodes_byte_strings",
+          "type": "method"
+        },
+        {
+          "name": "test_errors",
+          "type": "method"
+        },
+        {
+          "name": "test_proxy_error",
+          "type": "method"
+        },
+        {
+          "name": "test_proxy_error_on_bad_url",
+          "type": "method"
+        },
+        {
+          "name": "test_respect_proxy_env_on_send_self_prepared_request",
+          "type": "method"
+        },
+        {
+          "name": "test_respect_proxy_env_on_send_session_prepared_request",
+          "type": "method"
+        },
+        {
+          "name": "test_respect_proxy_env_on_send_with_redirects",
+          "type": "method"
+        },
+        {
+          "name": "test_respect_proxy_env_on_get",
+          "type": "method"
+        },
+        {
+          "name": "test_respect_proxy_env_on_request",
+          "type": "method"
+        },
+        {
+          "name": "test_proxy_authorization_preserved_on_request",
+          "type": "method"
+        },
+        {
+          "name": "test_proxy_authorization_not_appended_to_https_request",
+          "type": "method"
+        },
+        {
+          "name": "test_basicauth_with_netrc",
+          "type": "method"
+        },
+        {
+          "name": "test_DIGEST_HTTP_200_OK_GET",
+          "type": "method"
+        },
+        {
+          "name": "test_DIGEST_AUTH_RETURNS_COOKIE",
+          "type": "method"
+        },
+        {
+          "name": "test_DIGEST_AUTH_SETS_SESSION_COOKIES",
+          "type": "method"
+        },
+        {
+          "name": "test_DIGEST_STREAM",
+          "type": "method"
+        },
+        {
+          "name": "test_DIGESTAUTH_WRONG_HTTP_401_GET",
+          "type": "method"
+        },
+        {
+          "name": "test_DIGESTAUTH_QUOTES_QOP_VALUE",
+          "type": "method"
+        },
+        {
+          "name": "test_POSTBIN_GET_POST_FILES",
+          "type": "method"
+        },
+        {
+          "name": "test_invalid_files_input",
+          "type": "method"
+        },
+        {
+          "name": "test_POSTBIN_SEEKED_OBJECT_WITH_NO_ITER",
+          "type": "method"
+        },
+        {
+          "name": "test_POSTBIN_GET_POST_FILES_WITH_DATA",
+          "type": "method"
+        },
+        {
+          "name": "test_post_with_custom_mapping",
+          "type": "method"
+        },
+        {
+          "name": "test_conflicting_post_params",
+          "type": "method"
+        },
+        {
+          "name": "test_request_ok_set",
+          "type": "method"
+        },
+        {
+          "name": "test_status_raising",
+          "type": "method"
+        },
+        {
+          "name": "test_decompress_gzip",
+          "type": "method"
+        },
+        {
+          "name": "test_unicode_get",
+          "type": "method"
+        },
+        {
+          "name": "test_unicode_header_name",
+          "type": "method"
+        },
+        {
+          "name": "test_pyopenssl_redirect",
+          "type": "method"
+        },
+        {
+          "name": "test_invalid_ca_certificate_path",
+          "type": "method"
+        },
+        {
+          "name": "test_invalid_ssl_certificate_files",
+          "type": "method"
+        },
+        {
+          "name": "test_env_cert_bundles",
+          "type": "method"
+        },
+        {
+          "name": "test_http_with_certificate",
+          "type": "method"
+        },
+        {
+          "name": "test_https_warnings",
+          "type": "method"
+        },
+        {
+          "name": "test_certificate_failure",
+          "type": "method"
+        },
+        {
+          "name": "test_urlencoded_get_query_multivalued_param",
+          "type": "method"
+        },
+        {
+          "name": "test_form_encoded_post_query_multivalued_element",
+          "type": "method"
+        },
+        {
+          "name": "test_different_encodings_dont_break_post",
+          "type": "method"
+        },
+        {
+          "name": "test_unicode_multipart_post",
+          "type": "method"
+        },
+        {
+          "name": "test_unicode_multipart_post_fieldnames",
+          "type": "method"
+        },
+        {
+          "name": "test_unicode_method_name",
+          "type": "method"
+        },
+        {
+          "name": "test_unicode_method_name_with_request_object",
+          "type": "method"
+        },
+        {
+          "name": "test_non_prepared_request_error",
+          "type": "method"
+        },
+        {
+          "name": "test_custom_content_type",
+          "type": "method"
+        },
+        {
+          "name": "test_hook_receives_request_arguments",
+          "type": "method"
+        },
+        {
+          "name": "test_session_hooks_are_used_with_no_request_hooks",
+          "type": "method"
+        },
+        {
+          "name": "test_session_hooks_are_overridden_by_request_hooks",
+          "type": "method"
+        },
+        {
+          "name": "test_prepared_request_hook",
+          "type": "method"
+        },
+        {
+          "name": "test_prepared_from_session",
+          "type": "method"
+        },
+        {
+          "name": "test_prepare_request_with_bytestring_url",
+          "type": "method"
+        },
+        {
+          "name": "test_request_with_bytestring_host",
+          "type": "method"
+        },
+        {
+          "name": "test_links",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_parameters",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_as_dict_keeps_len",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_as_dict_keeps_items",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_as_dict_keys",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_as_dict_values",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_as_dict_items",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_duplicate_names_different_domains",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_duplicate_names_raises_cookie_conflict_error",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_policy_copy",
+          "type": "method"
+        },
+        {
+          "name": "test_time_elapsed_blank",
+          "type": "method"
+        },
+        {
+          "name": "test_empty_response_has_content_none",
+          "type": "method"
+        },
+        {
+          "name": "test_response_is_iterable",
+          "type": "method"
+        },
+        {
+          "name": "test_response_decode_unicode",
+          "type": "method"
+        },
+        {
+          "name": "test_response_reason_unicode",
+          "type": "method"
+        },
+        {
+          "name": "test_response_reason_unicode_fallback",
+          "type": "method"
+        },
+        {
+          "name": "test_response_chunk_size_type",
+          "type": "method"
+        },
+        {
+          "name": "test_iter_content_wraps_exceptions",
+          "type": "method"
+        },
+        {
+          "name": "test_request_and_response_are_pickleable",
+          "type": "method"
+        },
+        {
+          "name": "test_prepared_request_is_pickleable",
+          "type": "method"
+        },
+        {
+          "name": "test_prepared_request_with_file_is_pickleable",
+          "type": "method"
+        },
+        {
+          "name": "test_prepared_request_with_hook_is_pickleable",
+          "type": "method"
+        },
+        {
+          "name": "test_cannot_send_unprepared_requests",
+          "type": "method"
+        },
+        {
+          "name": "test_http_error",
+          "type": "method"
+        },
+        {
+          "name": "test_session_pickling",
+          "type": "method"
+        },
+        {
+          "name": "test_fixes_1329",
+          "type": "method"
+        },
+        {
+          "name": "test_uppercase_scheme_redirect",
+          "type": "method"
+        },
+        {
+          "name": "test_transport_adapter_ordering",
+          "type": "method"
+        },
+        {
+          "name": "test_session_get_adapter_prefix_matching",
+          "type": "method"
+        },
+        {
+          "name": "test_session_get_adapter_prefix_matching_mixed_case",
+          "type": "method"
+        },
+        {
+          "name": "test_session_get_adapter_prefix_matching_is_case_insensitive",
+          "type": "method"
+        },
+        {
+          "name": "test_header_remove_is_case_insensitive",
+          "type": "method"
+        },
+        {
+          "name": "test_params_are_merged_case_sensitive",
+          "type": "method"
+        },
+        {
+          "name": "test_long_authinfo_in_url",
+          "type": "method"
+        },
+        {
+          "name": "test_header_keys_are_native",
+          "type": "method"
+        },
+        {
+          "name": "test_header_validation",
+          "type": "method"
+        },
+        {
+          "name": "test_header_value_not_str",
+          "type": "method"
+        },
+        {
+          "name": "test_header_no_return_chars",
+          "type": "method"
+        },
+        {
+          "name": "test_header_no_leading_space",
+          "type": "method"
+        },
+        {
+          "name": "test_header_with_subclass_types",
+          "type": "method"
+        },
+        {
+          "name": "test_can_send_objects_with_files",
+          "type": "method"
+        },
+        {
+          "name": "test_can_send_file_object_with_non_string_filename",
+          "type": "method"
+        },
+        {
+          "name": "test_autoset_header_values_are_native",
+          "type": "method"
+        },
+        {
+          "name": "test_content_length_for_bytes_data",
+          "type": "method"
+        },
+        {
+          "name": "test_content_length_for_string_data_counts_bytes",
+          "type": "method"
+        },
+        {
+          "name": "test_nonhttp_schemes_dont_check_URLs",
+          "type": "method"
+        },
+        {
+          "name": "test_auth_is_stripped_on_http_downgrade",
+          "type": "method"
+        },
+        {
+          "name": "test_auth_is_retained_for_redirect_on_host",
+          "type": "method"
+        },
+        {
+          "name": "test_should_strip_auth_host_change",
+          "type": "method"
+        },
+        {
+          "name": "test_should_strip_auth_http_downgrade",
+          "type": "method"
+        },
+        {
+          "name": "test_should_strip_auth_https_upgrade",
+          "type": "method"
+        },
+        {
+          "name": "test_should_strip_auth_port_change",
+          "type": "method"
+        },
+        {
+          "name": "test_should_strip_auth_default_port",
+          "type": "method"
+        },
+        {
+          "name": "test_manual_redirect_with_partial_body_read",
+          "type": "method"
+        },
+        {
+          "name": "test_prepare_body_position_non_stream",
+          "type": "method"
+        },
+        {
+          "name": "test_rewind_body",
+          "type": "method"
+        },
+        {
+          "name": "test_rewind_partially_read_body",
+          "type": "method"
+        },
+        {
+          "name": "test_rewind_body_no_seek",
+          "type": "method"
+        },
+        {
+          "name": "test_rewind_body_failed_seek",
+          "type": "method"
+        },
+        {
+          "name": "test_rewind_body_failed_tell",
+          "type": "method"
+        },
+        {
+          "name": "_patch_adapter_gzipped_redirect",
+          "type": "method"
+        },
+        {
+          "name": "test_redirect_with_wrong_gzipped_header",
+          "type": "method"
+        },
+        {
+          "name": "test_basic_auth_str_is_always_native",
+          "type": "method"
+        },
+        {
+          "name": "test_requests_history_is_saved",
+          "type": "method"
+        },
+        {
+          "name": "test_json_param_post_content_type_works",
+          "type": "method"
+        },
+        {
+          "name": "test_json_param_post_should_not_override_data_param",
+          "type": "method"
+        },
+        {
+          "name": "test_response_iter_lines",
+          "type": "method"
+        },
+        {
+          "name": "test_response_context_manager",
+          "type": "method"
+        },
+        {
+          "name": "test_unconsumed_session_response_closes_connection",
+          "type": "method"
+        },
+        {
+          "name": "test_response_iter_lines_reentrant",
+          "type": "method"
+        },
+        {
+          "name": "test_session_close_proxy_clear",
+          "type": "method"
+        },
+        {
+          "name": "test_proxy_auth",
+          "type": "method"
+        },
+        {
+          "name": "test_proxy_auth_empty_pass",
+          "type": "method"
+        },
+        {
+          "name": "test_response_json_when_content_is_None",
+          "type": "method"
+        },
+        {
+          "name": "test_response_without_release_conn",
+          "type": "method"
+        },
+        {
+          "name": "test_empty_stream_with_auth_does_not_set_content_length_header",
+          "type": "method"
+        },
+        {
+          "name": "test_stream_with_auth_does_not_set_transfer_encoding_header",
+          "type": "method"
+        },
+        {
+          "name": "test_chunked_upload_does_not_set_content_length_header",
+          "type": "method"
+        },
+        {
+          "name": "test_custom_redirect_mixin",
+          "type": "method"
+        },
+        {
+          "name": "digest_auth_algo",
+          "type": "attribute"
+        }
+      ]
+    },
+    {
+      "name": "TestMorselToCookieExpires",
+      "children": [
+        {
+          "name": "test_expires_valid_str",
+          "type": "method"
+        },
+        {
+          "name": "test_expires_invalid_int",
+          "type": "method"
+        },
+        {
+          "name": "test_expires_none",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestMorselToCookieMaxAge",
+      "children": [
+        {
+          "name": "test_max_age_valid_int",
+          "type": "method"
+        },
+        {
+          "name": "test_max_age_invalid_str",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestTimeout",
+      "children": [
+        {
+          "name": "test_stream_timeout",
+          "type": "method"
+        },
+        {
+          "name": "test_invalid_timeout",
+          "type": "method"
+        },
+        {
+          "name": "test_none_timeout",
+          "type": "method"
+        },
+        {
+          "name": "test_read_timeout",
+          "type": "method"
+        },
+        {
+          "name": "test_connect_timeout",
+          "type": "method"
+        },
+        {
+          "name": "test_total_timeout_connect",
+          "type": "method"
+        },
+        {
+          "name": "test_encoded_methods",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "SessionRedirectMixin",
+      "children": [
+        {
+          "name": "get_redirect_target",
+          "type": "method"
+        },
+        {
+          "name": "should_strip_auth",
+          "type": "method"
+        },
+        {
+          "name": "resolve_redirects",
+          "type": "method"
+        },
+        {
+          "name": "rebuild_auth",
+          "type": "method"
+        },
+        {
+          "name": "rebuild_proxies",
+          "type": "method"
+        },
+        {
+          "name": "rebuild_method",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestPreparingURLs",
+      "children": [
+        {
+          "name": "test_preparing_url",
+          "type": "method"
+        },
+        {
+          "name": "test_preparing_bad_url",
+          "type": "method"
+        },
+        {
+          "name": "test_redirecting_to_bad_url",
+          "type": "method"
+        },
+        {
+          "name": "test_url_mutation",
+          "type": "method"
+        },
+        {
+          "name": "test_parameters_for_nonstandard_schemes",
+          "type": "method"
+        },
+        {
+          "name": "test_post_json_nan",
+          "type": "method"
+        },
+        {
+          "name": "test_json_decode_compatibility",
+          "type": "method"
+        },
+        {
+          "name": "test_json_decode_persists_doc_attr",
+          "type": "method"
+        },
+        {
+          "name": "test_status_code_425",
+          "type": "method"
+        },
+        {
+          "name": "test_different_connection_pool_for_tls_settings_verify_True",
+          "type": "method"
+        },
+        {
+          "name": "test_different_connection_pool_for_tls_settings_verify_bundle_expired_cert",
+          "type": "method"
+        },
+        {
+          "name": "test_different_connection_pool_for_tls_settings_verify_bundle_unexpired_cert",
+          "type": "method"
+        },
+        {
+          "name": "test_different_connection_pool_for_mtls_settings",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "TestStream",
+      "children": [
+        {
+          "name": "__init__",
+          "type": "method"
+        },
+        {
+          "name": "__len__",
+          "type": "method"
+        },
+        {
+          "name": "read",
+          "type": "method"
+        },
+        {
+          "name": "tell",
+          "type": "method"
+        },
+        {
+          "name": "seek",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "MutableMapping",
+      "children": []
+    },
+    {
+      "name": "DummyAuth",
+      "children": [
+        {
+          "name": "__call__",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "MyCookiePolicy",
+      "children": []
+    },
+    {
+      "name": "str",
+      "children": []
+    },
+    {
+      "name": "bytes",
+      "children": []
+    },
+    {
+      "name": "BadFileObj",
+      "children": [
+        {
+          "name": "__init__",
+          "type": "method"
+        },
+        {
+          "name": "tell",
+          "type": "method"
+        },
+        {
+          "name": "__iter__",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "CustomRedirectSession",
+      "children": [
+        {
+          "name": "get_redirect_target",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "VersionedPackage",
+      "children": [
+        {
+          "name": "__init__",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "Server",
+      "children": [
+        {
+          "name": "__init__",
+          "type": "method"
+        },
+        {
+          "name": "text_response_server",
+          "type": "method"
+        },
+        {
+          "name": "basic_response_server",
+          "type": "method"
+        },
+        {
+          "name": "run",
+          "type": "method"
+        },
+        {
+          "name": "_create_socket_and_bind",
+          "type": "method"
+        },
+        {
+          "name": "_close_server_sock_ignore_errors",
+          "type": "method"
+        },
+        {
+          "name": "_handle_requests",
+          "type": "method"
+        },
+        {
+          "name": "_accept_connection",
+          "type": "method"
+        },
+        {
+          "name": "__enter__",
+          "type": "method"
+        },
+        {
+          "name": "__exit__",
+          "type": "method"
+        },
+        {
+          "name": "WAIT_EVENT_TIMEOUT",
+          "type": "attribute"
+        }
+      ]
+    },
+    {
+      "name": "Style",
+      "children": []
+    },
+    {
+      "name": "MockRequest",
+      "children": [
+        {
+          "name": "__init__",
+          "type": "method"
+        },
+        {
+          "name": "get_type",
+          "type": "method"
+        },
+        {
+          "name": "get_host",
+          "type": "method"
+        },
+        {
+          "name": "get_origin_req_host",
+          "type": "method"
+        },
+        {
+          "name": "get_full_url",
+          "type": "method"
+        },
+        {
+          "name": "is_unverifiable",
+          "type": "method"
+        },
+        {
+          "name": "has_header",
+          "type": "method"
+        },
+        {
+          "name": "get_header",
+          "type": "method"
+        },
+        {
+          "name": "add_header",
+          "type": "method"
+        },
+        {
+          "name": "add_unredirected_header",
+          "type": "method"
+        },
+        {
+          "name": "get_new_headers",
+          "type": "method"
+        },
+        {
+          "name": "unverifiable",
+          "type": "method"
+        },
+        {
+          "name": "origin_req_host",
+          "type": "method"
+        },
+        {
+          "name": "host",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "MockResponse",
+      "children": [
+        {
+          "name": "__init__",
+          "type": "method"
+        },
+        {
+          "name": "info",
+          "type": "method"
+        },
+        {
+          "name": "getheaders",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "RuntimeError",
+      "children": []
+    },
+    {
+      "name": "AuthBase",
+      "children": [
+        {
+          "name": "__call__",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "HTTPBasicAuth",
+      "children": []
+    },
+    {
+      "name": "RequestEncodingMixin",
+      "children": [
+        {
+          "name": "path_url",
+          "type": "method"
+        },
+        {
+          "name": "_encode_params",
+          "type": "method"
+        },
+        {
+          "name": "_encode_files",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "RequestHooksMixin",
+      "children": [
+        {
+          "name": "register_hook",
+          "type": "method"
+        },
+        {
+          "name": "deregister_hook",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "Response",
+      "children": [
+        {
+          "name": "__init__",
+          "type": "method"
+        },
+        {
+          "name": "__enter__",
+          "type": "method"
+        },
+        {
+          "name": "__exit__",
+          "type": "method"
+        },
+        {
+          "name": "__getstate__",
+          "type": "method"
+        },
+        {
+          "name": "__setstate__",
+          "type": "method"
+        },
+        {
+          "name": "__repr__",
+          "type": "method"
+        },
+        {
+          "name": "__bool__",
+          "type": "method"
+        },
+        {
+          "name": "__nonzero__",
+          "type": "method"
+        },
+        {
+          "name": "__iter__",
+          "type": "method"
+        },
+        {
+          "name": "ok",
+          "type": "method"
+        },
+        {
+          "name": "is_redirect",
+          "type": "method"
+        },
+        {
+          "name": "is_permanent_redirect",
+          "type": "method"
+        },
+        {
+          "name": "next",
+          "type": "method"
+        },
+        {
+          "name": "apparent_encoding",
+          "type": "method"
+        },
+        {
+          "name": "iter_content",
+          "type": "method"
+        },
+        {
+          "name": "iter_lines",
+          "type": "method"
+        },
+        {
+          "name": "content",
+          "type": "method"
+        },
+        {
+          "name": "text",
+          "type": "method"
+        },
+        {
+          "name": "json",
+          "type": "method"
+        },
+        {
+          "name": "links",
+          "type": "method"
+        },
+        {
+          "name": "raise_for_status",
+          "type": "method"
+        },
+        {
+          "name": "close",
+          "type": "method"
+        },
+        {
+          "name": "__attrs__",
+          "type": "attribute"
+        }
+      ]
+    },
+    {
+      "name": "IOError",
+      "children": []
+    },
+    {
+      "name": "RequestException",
+      "children": []
+    },
+    {
+      "name": "InvalidJSONError",
+      "children": []
+    },
+    {
+      "name": "ConnectionError",
+      "children": []
+    },
+    {
+      "name": "Timeout",
+      "children": []
+    },
+    {
+      "name": "InvalidURL",
+      "children": []
+    },
+    {
+      "name": "Warning",
+      "children": []
+    },
+    {
+      "name": "RequestsWarning",
+      "children": []
+    },
+    {
+      "name": "dict",
+      "children": []
+    },
+    {
+      "name": "BaseAdapter",
+      "children": [
+        {
+          "name": "__init__",
+          "type": "method"
+        },
+        {
+          "name": "send",
+          "type": "method"
+        },
+        {
+          "name": "close",
+          "type": "method"
+        }
+      ]
+    }
+  ]
+}

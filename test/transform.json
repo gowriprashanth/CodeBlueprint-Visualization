@@ -1,0 +1,218 @@
+{
+  "lines_of_code": 3078,
+  "num_classes": 14,
+  "num_methods": 75,
+  "num_variables": 6,
+  "children": [
+    {
+      "name": "RequestsTestSuite",
+      "children": [
+        {
+          "name": "setUp",
+          "type": "method"
+        },
+        {
+          "name": "tearDown",
+          "type": "method"
+        },
+        {
+          "name": "test_invalid_url",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_200_OK_GET",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTPS_200_OK_GET",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_200_OK_GET_WITH_PARAMS",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_200_OK_GET_WITH_MIXED_PARAMS",
+          "type": "method"
+        },
+        {
+          "name": "test_user_agent_transfers",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_200_OK_HEAD",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTPS_200_OK_HEAD",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_200_OK_PUT",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTPS_200_OK_PUT",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTP_200_OK_PATCH",
+          "type": "method"
+        },
+        {
+          "name": "test_HTTPS_200_OK_PATCH",
+          "type": "method"
+        },
+        {
+          "name": "test_AUTH_HTTP_200_OK_GET",
+          "type": "method"
+        },
+        {
+          "name": "test_POSTBIN_GET_POST_FILES",
+          "type": "method"
+        },
+        {
+          "name": "test_POSTBIN_GET_POST_FILES_WITH_PARAMS",
+          "type": "method"
+        },
+        {
+          "name": "test_POSTBIN_GET_POST_FILES_WITH_HEADERS",
+          "type": "method"
+        },
+        {
+          "name": "test_nonzero_evaluation",
+          "type": "method"
+        },
+        {
+          "name": "test_request_ok_set",
+          "type": "method"
+        },
+        {
+          "name": "test_status_raising",
+          "type": "method"
+        },
+        {
+          "name": "test_cookie_jar",
+          "type": "method"
+        },
+        {
+          "name": "test_decompress_gzip",
+          "type": "method"
+        },
+        {
+          "name": "test_unicode_get",
+          "type": "method"
+        },
+        {
+          "name": "test_httpauth_recursion",
+          "type": "method"
+        },
+        {
+          "name": "test_settings",
+          "type": "method"
+        },
+        {
+          "name": "test_urlencoded_post_data",
+          "type": "method"
+        },
+        {
+          "name": "test_nonurlencoded_post_data",
+          "type": "method"
+        },
+        {
+          "name": "test_urlencoded_post_querystring",
+          "type": "method"
+        },
+        {
+          "name": "test_nonurlencoded_post_querystring",
+          "type": "method"
+        },
+        {
+          "name": "test_urlencoded_post_query_and_data",
+          "type": "method"
+        },
+        {
+          "name": "test_nonurlencoded_post_query_and_data",
+          "type": "method"
+        },
+        {
+          "name": "test_idna",
+          "type": "method"
+        },
+        {
+          "name": "test_urlencoded_get_query_multivalued_param",
+          "type": "method"
+        },
+        {
+          "name": "test_urlencoded_post_querystring_multivalued",
+          "type": "method"
+        },
+        {
+          "name": "test_urlencoded_post_query_multivalued_and_data",
+          "type": "method"
+        },
+        {
+          "name": "test_redirect_history",
+          "type": "method"
+        },
+        {
+          "name": "test_relative_redirect_history",
+          "type": "method"
+        },
+        {
+          "name": "test_session_HTTP_200_OK_GET",
+          "type": "method"
+        },
+        {
+          "name": "test_session_HTTPS_200_OK_GET",
+          "type": "method"
+        },
+        {
+          "name": "test_session_persistent_headers",
+          "type": "method"
+        }
+      ]
+    },
+    {
+      "name": "Style",
+      "children": []
+    },
+    {
+      "name": "object",
+      "children": []
+    },
+    {
+      "name": "Exception",
+      "children": []
+    },
+    {
+      "name": "RequestException",
+      "children": []
+    },
+    {
+      "name": "dict",
+      "children": []
+    },
+    {
+      "name": "multipart_yielder",
+      "children": [
+        {
+          "name": "__init__",
+          "type": "method"
+        },
+        {
+          "name": "__iter__",
+          "type": "method"
+        },
+        {
+          "name": "next",
+          "type": "method"
+        },
+        {
+          "name": "reset",
+          "type": "method"
+        }
+      ]
+    }
+  ]
+}
