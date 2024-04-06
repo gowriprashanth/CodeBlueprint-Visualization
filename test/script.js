@@ -1,5 +1,6 @@
 import { debounce } from './debounce.js';
 import { createOrUpdateChart } from './chart.js';
+import { createOrUpdateDashboard } from './dashboard.js';
 
 // Debounced updateVisualization function
 export const UpdateVisualization = debounce(function(commitNumber) {
@@ -7,6 +8,7 @@ export const UpdateVisualization = debounce(function(commitNumber) {
     axios.post('http://127.0.0.1:5000/get_d3_data', { commit_number: commitNumber })
     .then(response => {
         createOrUpdateChart(response.data);
+        createOrUpdateDashboard(response.data);
     })
     .catch(error => {
         console.error('Error fetching data:', error);

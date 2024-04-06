@@ -1,0 +1,8 @@
+.idea
+MANIFEST
+coverage.xml
+nosetests.xml
+pylint.txt
+*.pyc
+docs/_build
+toy.py

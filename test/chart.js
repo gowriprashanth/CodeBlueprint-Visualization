@@ -1,16 +1,16 @@
 export function createOrUpdateChart(data) {
     // Compute width and height dynamically based on data.
-    const diameter = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    const width = diameter;
-    const height = diameter;
+    //const diameter = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const width = 500;
+    const height = 500;
 
     // Remove existing chart if it exists.
     d3.select("#chart-container").selectAll("svg").remove();
     
-    // Create the color scale.
+    //Create the color scale.
     const color = d3.scaleLinear()
         .domain([0, 5])
-        .range(["hsl(45, 80%, 60%)", "hsl(228, 30%, 40%)"])
+        .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
         .interpolate(d3.interpolateHcl);
 
     // Create a div for scrolling.
@@ -44,9 +44,12 @@ export function createOrUpdateChart(data) {
     node.append("circle")
         .attr("fill", d => d.children ? color(d.depth) : "white")
         .attr("r", d => d.r)
-        .on("mouseover", function() { d3.select(this).attr("stroke", "#000"); })
+        .on("mouseover", function() { d3.select(this).attr("stroke", "#FF0000"); })
         .on("mouseout", function() { d3.select(this).attr("stroke", null); })
-        .on("click", (event, d) => focus !== d && (zoom(event, d), event.stopPropagation()));
+        .on("click", (event, d) => {
+            focus !== d && (zoom(event, d), event.stopPropagation());
+            d3.select(this.parentNode).select("text").style("display", "block");
+        });
 
     // Add text labels near the circles.
     node.append("text")
@@ -65,18 +68,18 @@ export function createOrUpdateChart(data) {
     .style("opacity", 0);
 
     // Show tooltip on mouseover
-    node.on("mouseover", function(d) {
-        var text = d3.select(this).select("text").text();
+    node.on("mouseover", (event, d) => {
+        const text = d.data.name;
         tooltip.transition()
             .duration(200)
             .style("opacity", .9);
         tooltip.html(text) 
-            .style("left", (d3.event.pageX ) + "px")
-            .style("top", (d3.event.pageY ) + "px");
+            .style("left", (event.pageX) + "px")
+            .style("top", (event.pageY) + "px");
     })
 
     // Hide tooltip on mouseout
-    .on("mouseout", function(d) {
+    .on("mouseout", () => {
         tooltip.transition()
             .duration(500)
             .style("opacity", 0);
