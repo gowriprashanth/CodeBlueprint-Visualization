@@ -20,6 +20,7 @@ def extract_project_attributes(project_directory, repo_owner, repo_name):
         "num_classes": 0,
         "num_methods": 0,
         "num_variables": 0,
+        "for_loops": 0,
         "classes": {}
     }
 
@@ -41,7 +42,7 @@ def extract_project_attributes(project_directory, repo_owner, repo_name):
                                 class_name = node.name
                                 class_attributes["num_classes"] += 1
 
-                                current_class = {"methods": [], "attributes": []}
+                                current_class = {"methods": [], "attributes": [], "loops": 0}  # Add loops attribute to current_class
                                 parent_classes = []
                                 for base_class in node.bases:
                                     if isinstance(base_class, ast.Name):
@@ -63,6 +64,9 @@ def extract_project_attributes(project_directory, repo_owner, repo_name):
                                                 variable_name = target.id
                                                 class_attributes["num_variables"] += 1
                                                 current_class["attributes"].append(variable_name)
+                                    elif isinstance(item, ast.For): 
+                                        class_attributes["for_loops"] += 1
+                                        current_class["loops"] += 1
                     except SyntaxError:
                         print(f"Error parsing {file_path}. Skipping.")
 
@@ -92,12 +96,27 @@ def fetch_commit_hash(owner, repo, commit_number):
         print(f"Failed to fetch commit hash. Status code: {response.status_code}")
         return None
 
+# Function to fetch commit information including commit message from GitHub API
+def fetch_commit_info(owner, repo, commit_sha):
+    url = f"https://api.github.com/repos/{owner}/{repo}/commits/{commit_sha}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return data.get("commit").get("message")
+    else:
+        print(f"Failed to fetch commit information. Status code: {response.status_code}")
+        return None
+
+# def fetch_commit_info(owner, repo, commit_sha):
+#     return None
+
 def transform_to_d3_format(data):
     root = {
         "lines_of_code": data["lines_of_code"],
         "num_classes": data["num_classes"],
         "num_methods": data["num_methods"],
         "num_variables": data["num_variables"],
+        "for_loops": data["for_loops"],
         "children": []
     }
     for class_name, class_info in data["classes"].items():
@@ -123,7 +142,13 @@ def get_d3_data():
         fetch_repository_files(owner, repo, commit_hash, "repo_files")
         project_directory = f"{owner}-{repo}-{commit_hash[:7]}"
         attributes = extract_project_attributes("repo_files/"+project_directory, owner, repo)
+
+        commit_message = fetch_commit_info(owner, repo, commit_hash)
         d3_data = transform_to_d3_format(attributes)
+        d3_data["commit_message"] = commit_message
+        title = repo + " by " + owner
+        d3_data["title"] = title
+        d3_data["commit_number"] = commit_number
         
         response = jsonify(d3_data)
         response.headers.add('Access-Control-Allow-Origin', '*') 

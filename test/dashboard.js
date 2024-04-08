@@ -1,21 +1,21 @@
 export function createOrUpdateDashboard(data) {
-    const { lines_of_code, num_classes, num_methods, num_variables } = data;
+    var { lines_of_code, num_classes, num_methods, num_variables, commit_message, title, commit_number } = data;
 
-    // Select the container element where you want to create the dashboard
     const container = d3.select('#dashboard-container');
+    commit_number = 6270 - commit_number + 1;
 
-    // Creating or updating number displays for each metric
+    createOrUpdateNumberDisplay(container, 'Github Repository', title);
+    createOrUpdateNumberDisplay(container, 'Commit Number', commit_number);
     createOrUpdateNumberDisplay(container, 'Lines of Code', lines_of_code);
-    createOrUpdateNumberDisplay(container, 'Number of Classes', num_classes);
-    createOrUpdateNumberDisplay(container, 'Number of Methods', num_methods);
-    createOrUpdateNumberDisplay(container, 'Number of Variables', num_variables);
+    createOrUpdateNumberDisplay(container, 'Total Classes', num_classes);
+    createOrUpdateNumberDisplay(container, 'Total Methods', num_methods);
+    createOrUpdateNumberDisplay(container, 'Total Variables', num_variables);
+    createOrUpdateNumberDisplay(container, 'Commit Message', commit_message);
 }
 
-// Function to create or update number display for a metric
 function createOrUpdateNumberDisplay(container, label, value) {
     let display = container.select(`#display-${label.replace(/\s+/g, '-')}`);
 
-    // If display does not exist, create it
     if (display.empty()) {
         display = container.append('div')
             .attr('id', `display-${label.replace(/\s+/g, '-')}`)
@@ -24,6 +24,5 @@ function createOrUpdateNumberDisplay(container, label, value) {
         display.append('div').attr('class', 'value');
     }
 
-    // Update the value
     display.select('.value').text(value);
 }

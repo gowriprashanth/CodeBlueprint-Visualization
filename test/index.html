@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D3 Visualization</title>
     <!-- Load D3.js -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Load Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Code Blueprint</title>
+    <div class="header"><h1>Code Blueprint</h1></div>
 </head>
 <body>
     <div id="slidecontainer">
         <input type="range" min="1" max="6270" value="1" class="slider" id="commitNumberSlider">
+        <div id="sliderValues"></div>
     </div>
     <!-- Container for D3 visualization -->
     <div id="chart-container"></div>
     <div id="dashboard-container"></div>
+
     <!-- Load JavaScript files -->
     <script type="module" src="debounce.js"></script>
     <script type="module" src="chart.js"></script>

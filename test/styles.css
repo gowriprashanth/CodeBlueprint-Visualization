@@ -1,56 +1,95 @@
-CSS to reverse the slider
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #4169E1;
+}
+
+.header {
+  padding: 0.3px;
+  text-align: center;
+  background: #F5F5DC;
+  color: white;
+  font-size: 12px;
+}
+
   #slidecontainer {
     width: 100%;
-    margin-bottom: 20px; /* Add some space below the slider */
+    margin-bottom: 20px; 
 }
+
+body {
+  overflow-y: scroll; 
+  height: 100vh; 
+}
+
 
 #commitNumberSlider {
     width: 100%;
-    background-color: #f0f0f0;
-    border: none;
+    background-color: #F5F5DC;
+    border: none; 
     border-radius: 5px;
-    height: 30px;
+    height: 65px;
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
+    left: 0%;
     width: 100%; 
+    transform: translateY(80%);
     text-align: center;
 }
 
-/* The slider itself */
+#sliderValues {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 577px;
+  font-weight: bold;
+  
+}
+
+
+#sliderValues span {
+  font-size: 12px;
+  margin-left: -3px;
+  margin-right: -8px;
+}
+
 .slider {
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: none;  
   appearance: none;
-  width: 90%; /* Full-width */
-  height: 25px; /* Specified height */
-  background: #d3d3d3; /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  width: 75%; 
+  height: 69px; 
+  background: #d3d3d3; 
+  outline: none; 
+  opacity: 0.7; 
+  -webkit-transition: .2s;
   transition: opacity .2s;
 }
 
-/* Mouse-over effects */
 .slider:hover {
-  opacity: 1; /* Fully shown on mouse-over */
+  opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none; 
   appearance: none;
-  width: 5px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #04AA6D; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  width: 7px; 
+  height: 75px; 
+  background: #04AA6D; 
+  cursor: pointer;
+  border-radius: 10px 10px 0px 0px;
+  border: 2px solid #4CAF50;
 }
 
 .slider::-moz-range-thumb {
-  width: 5px; /* Set a specific slider handle width */
-  height: 5px; /* Slider handle height */
-  background: #04AA6D; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  width: 5px; 
+  height: 5px;
+  background: #04AA6D; 
+  cursor: pointer; 
+  border-radius: 0 0 10px 10px;
+  border: 2px solid #4CAF50;
 }
 
-/* Add your CSS styles for the dashboard feature here */
+
 .number-display {
   display: inline-block;
   margin: 20px;
@@ -69,27 +108,88 @@ CSS to reverse the slider
   font-size: 24px;
 }
 
-/* Custom styles for different metrics */
 #display-Lines-of-Code {
-  color: blue;
+  color: #FF1FB6;
   font-family: Arial, sans-serif;
   text-align: center;
 }
 
-#display-Number-of-Classes {
-  color: green;
-  font-family: Helvetica, sans-serif;
-  text-align: right;
+#display-Commit-Number {
+  color: #FF1F46;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
-#display-Number-of-Methods {
-  color: red;
+#display-Total-Classes {
+  color: #FF681F;
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+}
+
+#display-Total-Methods {
+  color: #FFD81F;
   font-family: Verdana, sans-serif;
   text-align: center;
 }
 
-#display-Number-of-Variables {
-  color: orange;
+#display-Total-Variables {
+  color: #FFA500;
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+}
+
+#display-Github-Repository{
+  color: #681FFF;
   font-family: Tahoma, sans-serif;
   text-align: left;
+}
+
+#display-Commit-Message {
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  transform: translateX(-30%);
+  color: rgb(1, 9, 11);
+  font-family: Tahoma, sans-serif;
+  text-align: left;
+  width: 60%;
+  max-width: 320px;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  word-wrap: break-word; 
+}
+
+
+
+.attribute-display {
+  position: absolute;
+  top: 42%;
+  right: 6%;
+  transform: translateX(11%);
+  color: rgb(1, 9, 11);
+  font-family: Tahoma, sans-serif;
+  text-align: left;
+  width: 27%;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  height: 60px; 
+  
+}
+
+.attribute-display .label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.attribute-display .value {
+  font-family: Tahoma, sans-serif;
+  font-size: 14px;
+  overflow: auto;
+  text-wrap:nowrap;
 }

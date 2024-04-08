@@ -1,6 +1,0 @@
-gunicorn
-envoy==0.0.2
-nose
-pyflakes
-omnijson
-httpbin==0.0.4

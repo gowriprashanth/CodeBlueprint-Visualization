@@ -13,18 +13,35 @@ export const UpdateVisualization = debounce(function(commitNumber) {
     .catch(error => {
         console.error('Error fetching data:', error);
     });
-}, 500); // Adjust the delay as needed
+}, 500);
 
-// Initial visualization update with default input value
+
 UpdateVisualization(6270);
+updateSliderValues(6270, 1);
 
-// Add event listener for slider input change
+
 document.getElementById("commitNumberSlider").addEventListener("input", function() {
-    const sliderMax = 6270; // Maximum value of the slider
+    const sliderMax = 6270; 
     const sliderValue = +document.getElementById("commitNumberSlider").value;
     
-    // Calculate the corresponding commit number
-    const commitNumber = sliderMax - sliderValue + 1;
+  
+    var commitNumber = sliderMax - sliderValue + 1;
     
     UpdateVisualization(commitNumber);
+    updateSliderValues(sliderMax, sliderValue);
 });
+
+function updateSliderValues(max, value) {
+    const sliderValuesContainer = document.getElementById("sliderValues");
+    sliderValuesContainer.innerHTML = '';
+
+
+    const step = Math.floor(max / 10);
+
+
+    for (let i = 0; i <= max; i += step) {
+        const span = document.createElement('span');
+        span.textContent = i;
+        sliderValuesContainer.appendChild(span);
+    }
+}
