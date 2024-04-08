@@ -91,7 +91,7 @@ def fetch_commit_hash(owner, repo, commit_number):
             print("Commit not found.")
             return None
     else:
-        print(f"Failed to fetch commit hash. Status code: {response.status_code}")
+        print(f"Failed to fetch commit hash in hash method. Status code: {response.status_code}")
         return None
 
 # Function to fetch commit information including commit message from GitHub API
@@ -130,29 +130,36 @@ def transform_to_d3_format(data):
 
 @app.route('/get_d3_data', methods=['POST'])
 def get_d3_data():
-    data = request.json
-    owner = "psf"
-    repo = "requests"
-    commit_number = data['commit_number']
+    try:
+        data = request.json
+        owner = "psf"
+        repo = "requests"
+        commit_number = data['commit_number']
 
-    commit_hash = fetch_commit_hash(owner, repo, commit_number)
-    if commit_hash:
-        fetch_repository_files(owner, repo, commit_hash, "repo_files")
-        project_directory = f"{owner}-{repo}-{commit_hash[:7]}"
-        attributes = extract_project_attributes("repo_files/"+project_directory, owner, repo)
+        commit_hash = fetch_commit_hash(owner, repo, commit_number)
+        if commit_hash:
+            fetch_repository_files(owner, repo, commit_hash, "repo_files")
+            project_directory = f"{owner}-{repo}-{commit_hash[:7]}"
+            attributes = extract_project_attributes("repo_files/"+project_directory, owner, repo)
 
-        commit_message = fetch_commit_info(owner, repo, commit_hash)
-        d3_data = transform_to_d3_format(attributes)
-        d3_data["commit_message"] = commit_message
-        title = repo + " by " + owner
-        d3_data["title"] = title
-        d3_data["commit_number"] = commit_number
-        
-        response = jsonify(d3_data)
-        response.headers.add('Access-Control-Allow-Origin', '*') 
-        return response
-    else:
-        return jsonify({'error': 'Failed to fetch commit hash'})
+            commit_message = fetch_commit_info(owner, repo, commit_hash)
+            d3_data = transform_to_d3_format(attributes)
+            d3_data["commit_message"] = commit_message
+            title = repo + " by " + owner
+            d3_data["title"] = title
+            d3_data["commit_number"] = commit_number
+            
+            response = jsonify(d3_data)
+            response.headers.add('Access-Control-Allow-Origin', '*') 
+            return response
+        else:
+            return jsonify({'error': 'Failed to fetch commit hash in api'})
+    except Exception as e:
+        # Log the error message for debugging purposes
+        print(f"An error occurred: {str(e)}")
+        # Return a meaningful error response to the client
+        return jsonify({'error': 'An unexpected error occurred. Please try again later.'})
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
