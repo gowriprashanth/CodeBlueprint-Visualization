@@ -2,10 +2,8 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS 
 import os
 import ast
-import json
 import requests
 import subprocess
-import shutil
 import tarfile
 
 app = Flask(__name__)
@@ -157,4 +155,4 @@ def get_d3_data():
         return jsonify({'error': 'Failed to fetch commit hash'})
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=10000)
