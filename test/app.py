@@ -147,7 +147,7 @@ def get_d3_data():
         commit_number = data['commit_number']
 
         commit_hash = fetch_commit_hash(owner, repo, commit_number)
-        commit_hash = "e7615cbc6b4af5985c4e0d4848a426e2d35f79c3"
+        commit_hash = "86fb0cb23586b3bb326f5ba62abc4bf54447918f"
         if commit_hash:
             fetch_repository_files(owner, repo, commit_hash, "repo_files")
 
