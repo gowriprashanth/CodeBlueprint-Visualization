@@ -5,7 +5,6 @@ import ast
 import requests
 import subprocess
 import tarfile
-import logging
 from flask import send_from_directory
 
 app = Flask(__name__)
@@ -72,17 +71,8 @@ def extract_project_attributes(project_directory, repo_owner, repo_name):
 
     return class_attributes
 
-def fetch_repository_files(owner, repo, commit_sha, target_dir):
-    url = f"https://api.github.com/repos/{owner}/{repo}/tarball/{commit_sha}"
-    response = requests.get(url, stream=True)
-    if response.status_code == 200:
-        with tarfile.open(fileobj=response.raw, mode="r|gz") as tar:
-            tar.extractall(path=target_dir)
-    else:
-        print(f"Failed to fetch repository files. Status code: {response.status_code}")
-
 def fetch_commit_hash(owner, repo, commit_number):
-    url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=1&page=6000"
+    url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=1&page={commit_number}"
     #params = {"per_page": 1, "page": commit_number}
     response = requests.get(url)
     if response.status_code == 200:
@@ -95,6 +85,15 @@ def fetch_commit_hash(owner, repo, commit_number):
     else:
         print(f"Failed to fetch commit hash. Status code: {response.status_code}")
         return None
+    
+def fetch_repository_files(owner, repo, commit_sha, target_dir):
+    url = f"https://api.github.com/repos/{owner}/{repo}/tarball/{commit_sha}"
+    response = requests.get(url, stream=True)
+    if response.status_code == 200:
+        with tarfile.open(fileobj=response.raw, mode="r|gz") as tar:
+            tar.extractall(path=target_dir)
+    else:
+        print(f"Failed to fetch repository files. Status code: {response.status_code}")
 
 # Function to fetch commit information including commit message from GitHub API
 def fetch_commit_info(owner, repo, commit_sha):
@@ -128,56 +127,37 @@ def transform_to_d3_format(data):
         root["children"].append(class_node)
     return root
 
-logging.basicConfig(level=logging.INFO)
-
-from flask import send_from_directory
-
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(app.root_path, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/get_d3_data', methods=['POST'])
 def get_d3_data():
-    try:
-        data = request.json
-        owner = "psf"
-        repo = "requests"
-        commit_number = data['commit_number']
+    data = request.json
+    owner = "psf"
+    repo = "requests"
+    commit_number = data['commit_number']
 
-        commit_hash = fetch_commit_hash(owner, repo, commit_number)
-        commit_hash = "86fb0cb23586b3bb326f5ba62abc4bf54447918f"
-        if commit_hash:
-            fetch_repository_files(owner, repo, commit_hash, "repo_files")
+    commit_hash = fetch_commit_hash(owner, repo, commit_number)
+    if commit_hash:
+        fetch_repository_files(owner, repo, commit_hash, "repo_files")
+        project_directory = f"{owner}-{repo}-{commit_hash[:7]}"
+        attributes = extract_project_attributes("repo_files/"+project_directory, owner, repo)
 
-            project_directory = f"{owner}-{repo}-{commit_hash[:7]}"
-
-            attributes = extract_project_attributes("repo_files/"+project_directory, owner, repo)
-
-            commit_message = fetch_commit_info(owner, repo, commit_hash)
-
-            d3_data = transform_to_d3_format(attributes)
-
-            d3_data["commit_message"] = commit_message
-            
-            title = repo + " by " + owner
-            
-            d3_data["title"] = title
-            
-            d3_data["commit_number"] = commit_number
-            
-            response = jsonify(d3_data)
-            response.headers.add('Access-Control-Allow-Origin', '*') 
-            return response
-        else:
-            print(commit_hash)
-            error_msg = 'Failed to fetch commit hash from GitHub API'
-            logging.error(error_msg)
-            return jsonify({'error': 'Failed to fetch commit hash in api'})
-    except Exception as e:
-        print(f"An error occurred: {str(e)}")
-        logging.exception(error_msg)
-        return jsonify({'error': 'An unexpected error occurred. Please try again later.'})
-
+        commit_message = fetch_commit_info(owner, repo, commit_hash)
+        d3_data = transform_to_d3_format(attributes)
+        d3_data["commit_message"] = commit_message
+        title = repo + " by " + owner
+        d3_data["title"] = title
+        d3_data["commit_number"] = commit_number
+        
+        response = jsonify(d3_data)
+        response.headers.add('Access-Control-Allow-Origin', '*') 
+        print(commit_hash)
+        return response
+    else:
+        print(commit_hash)
+        return jsonify({'error': 'Failed to fetch commit hash'})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
