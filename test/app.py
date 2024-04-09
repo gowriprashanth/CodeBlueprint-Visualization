@@ -6,6 +6,7 @@ import requests
 import subprocess
 import tarfile
 import logging
+from flask import send_from_directory
 
 app = Flask(__name__)
 CORS(app)
@@ -96,18 +97,18 @@ def fetch_commit_hash(owner, repo, commit_number):
         return None
 
 # Function to fetch commit information including commit message from GitHub API
-# def fetch_commit_info(owner, repo, commit_sha):
-#     url = f"https://api.github.com/repos/{owner}/{repo}/commits/{commit_sha}"
-#     response = requests.get(url)
-#     if response.status_code == 200:
-#         data = response.json()
-#         return data.get("commit").get("message")
-#     else:
-#         print(f"Failed to fetch commit information. Status code: {response.status_code}")
-#         return None
-
 def fetch_commit_info(owner, repo, commit_sha):
-    return None
+    url = f"https://api.github.com/repos/{owner}/{repo}/commits/{commit_sha}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return data.get("commit").get("message")
+    else:
+        print(f"Failed to fetch commit information. Status code: {response.status_code}")
+        return None
+
+# def fetch_commit_info(owner, repo, commit_sha):
+#     return None
 
 def transform_to_d3_format(data):
     root = {
@@ -131,6 +132,12 @@ def transform_to_d3_format(data):
 
 logging.basicConfig(level=logging.INFO)
 
+from flask import send_from_directory
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(app.root_path, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
 @app.route('/get_d3_data', methods=['POST'])
 def get_d3_data():
     try:
@@ -140,16 +147,24 @@ def get_d3_data():
         commit_number = data['commit_number']
 
         commit_hash = fetch_commit_hash(owner, repo, commit_number)
+        commit_hash = "e7615cbc6b4af5985c4e0d4848a426e2d35f79c3"
         if commit_hash:
             fetch_repository_files(owner, repo, commit_hash, "repo_files")
+
             project_directory = f"{owner}-{repo}-{commit_hash[:7]}"
+
             attributes = extract_project_attributes("repo_files/"+project_directory, owner, repo)
 
             commit_message = fetch_commit_info(owner, repo, commit_hash)
+
             d3_data = transform_to_d3_format(attributes)
+
             d3_data["commit_message"] = commit_message
+            
             title = repo + " by " + owner
+            
             d3_data["title"] = title
+            
             d3_data["commit_number"] = commit_number
             
             response = jsonify(d3_data)
