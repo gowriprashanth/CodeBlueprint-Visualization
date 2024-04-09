@@ -5,7 +5,7 @@ import { createOrUpdateDashboard } from './dashboard.js';
 // Debounced updateVisualization function
 export const UpdateVisualization = debounce(function(commitNumber) {
     // Make an AJAX call to fetch data based on the commit number from Flask endpoint
-    axios.post('http://127.0.0.1:10000/get_d3_data', { commit_number: commitNumber })
+    axios.post('https://codeblueprint-deployment-4dd83ce64f5a.herokuapp.com/get_d3_data', { commit_number: commitNumber })
     .then(response => {
         createOrUpdateChart(response.data);
         createOrUpdateDashboard(response.data);
