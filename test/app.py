@@ -5,6 +5,7 @@ import ast
 import requests
 import subprocess
 import tarfile
+import logging
 
 app = Flask(__name__)
 CORS(app)
@@ -128,6 +129,8 @@ def transform_to_d3_format(data):
         root["children"].append(class_node)
     return root
 
+logging.basicConfig(level=logging.INFO)
+
 @app.route('/get_d3_data', methods=['POST'])
 def get_d3_data():
     try:
@@ -153,11 +156,13 @@ def get_d3_data():
             response.headers.add('Access-Control-Allow-Origin', '*') 
             return response
         else:
+            print(commit_hash)
+            error_msg = 'Failed to fetch commit hash from GitHub API'
+            logging.error(error_msg)
             return jsonify({'error': 'Failed to fetch commit hash in api'})
     except Exception as e:
-        # Log the error message for debugging purposes
         print(f"An error occurred: {str(e)}")
-        # Return a meaningful error response to the client
+        logging.exception(error_msg)
         return jsonify({'error': 'An unexpected error occurred. Please try again later.'})
 
 
