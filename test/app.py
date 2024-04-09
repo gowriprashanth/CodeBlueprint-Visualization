@@ -84,7 +84,7 @@ def fetch_repository_files(owner, repo, commit_sha, target_dir):
 def fetch_commit_hash(owner, repo, commit_number):
     url = f"https://api.github.com/repos/{owner}/{repo}/commits"
     params = {"per_page": 1, "page": commit_number}
-    response = requests.get(url, params=params)
+    response = requests.get(url, params)
     if response.status_code == 200:
         data = response.json()
         if data:
