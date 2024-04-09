@@ -82,9 +82,9 @@ def fetch_repository_files(owner, repo, commit_sha, target_dir):
         print(f"Failed to fetch repository files. Status code: {response.status_code}")
 
 def fetch_commit_hash(owner, repo, commit_number):
-    url = f"https://api.github.com/repos/{owner}/{repo}/commits"
-    params = {"per_page": 1, "page": commit_number}
-    response = requests.get(url, params)
+    url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=1&page=6000"
+    #params = {"per_page": 1, "page": commit_number}
+    response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
         if data:
@@ -93,7 +93,7 @@ def fetch_commit_hash(owner, repo, commit_number):
             print("Commit not found.")
             return None
     else:
-        print(f"Failed to fetch commit hash in hash method. Status code: {response.status_code}")
+        print(f"Failed to fetch commit hash. Status code: {response.status_code}")
         return None
 
 # Function to fetch commit information including commit message from GitHub API
@@ -107,8 +107,6 @@ def fetch_commit_info(owner, repo, commit_sha):
         print(f"Failed to fetch commit information. Status code: {response.status_code}")
         return None
 
-# def fetch_commit_info(owner, repo, commit_sha):
-#     return None
 
 def transform_to_d3_format(data):
     root = {
