@@ -12,6 +12,23 @@ h1 {
   font-size: 12px;
 }
 
+.links {
+  position: absolute;
+  top: 75px; 
+  left: 590px; 
+}
+
+.links a {
+  display: inline-block;
+  margin-right: 20px; 
+  color: #333;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: #007bff;
+}
   #slidecontainer {
     width: 100%;
     margin-bottom: 20px; 
