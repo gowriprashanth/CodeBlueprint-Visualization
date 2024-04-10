@@ -14,9 +14,10 @@ h1 {
 
 .links {
   position: absolute;
-  justify-content: center;
-  
+  top: 75px; 
+  left: 590px; 
 }
+
 
 .links a {
   display: inline-block;
