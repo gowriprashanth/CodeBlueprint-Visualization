@@ -14,8 +14,8 @@ h1 {
 
 .links {
   position: absolute;
-  top: 75px; 
-  left: 590px; 
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .links a {
