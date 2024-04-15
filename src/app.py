@@ -1,11 +1,11 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS 
 import os
 import ast
 import requests
 import subprocess
 import tarfile
-from flask import send_from_directory
+import shutil
 
 app = Flask(__name__)
 CORS(app)
@@ -87,6 +87,8 @@ def fetch_commit_hash(owner, repo, commit_number):
         return None
     
 def fetch_repository_files(owner, repo, commit_sha, target_dir):
+    if os.path.exists(target_dir):
+        shutil.rmtree(target_dir)
     url = f"https://api.github.com/repos/{owner}/{repo}/tarball/{commit_sha}"
     response = requests.get(url, stream=True)
     if response.status_code == 200:
@@ -160,4 +162,4 @@ def get_d3_data():
         return jsonify({'error': 'Failed to fetch commit hash'})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+    app.run()
